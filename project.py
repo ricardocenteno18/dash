@@ -1,7 +1,8 @@
 #importing the libraries
 import dash
-import dash_core_components as dcc
-import dash_html_components as html
+from dash import html, dcc
+import plotly.express as px
+import json 
 import plotly.express as px
 import pandas as pd
 from dash.dependencies import Input, Output
@@ -29,7 +30,7 @@ app.layout = html.Div([html.Div([html.H1('Análisis del dataset iris.csv')],
                             html.Div([html.Label('Selecciona el marginal del eje X'),
                                                 dcc.RadioItems(id='marginal-x', options=marginals, labelStyle={'display':'block'})],
                                                 style={'width':'20%',
-                                                       'marginRight':'4%',
+                                                        'marginRight':'4%',
                                                         'display':'inline-block'}),
                             html.Div([html.Label('Selecciona la variable del eje Y'),
                                                 dcc.Dropdown(id='eje-y', options=variables)],
